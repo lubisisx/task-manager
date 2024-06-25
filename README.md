@@ -15,7 +15,7 @@ To get started with the project, follow these steps:
 1. **Clone the repository**:
 
    ```sh
-   git clone https://github.com/lubisisx/task-management-app.git
+   git clone https://github.com/lubisisx/task-manager.git
    cd task-management-app
    ```
 
