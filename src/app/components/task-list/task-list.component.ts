@@ -33,9 +33,9 @@ export class TaskListComponent implements OnInit {
   }
 
   applyFilter() {
-    console.log('Filter changed!');
     let filteredTasks = this.taskService.getCurrentTasks();
 
+    console.log('Applying sort and filter...');
     if (this.filterControl.value) {
       filteredTasks = filteredTasks.filter(
         (task) =>
@@ -51,11 +51,11 @@ export class TaskListComponent implements OnInit {
     } else if (this.sortControl.value === 'priority') {
       const priorityOrder = { low: 1, medium: 2, high: 3 };
       filteredTasks = filteredTasks.sort(
-        (a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]
+        (a, b) => priorityOrder[b.priority] - priorityOrder[a.priority]
       );
     }
 
-    this.tasks = filteredTasks;
+    this.tasks = [...filteredTasks];
   }
 
   markAsCompleted(task: Task) {
