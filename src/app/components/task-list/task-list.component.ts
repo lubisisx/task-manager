@@ -35,7 +35,6 @@ export class TaskListComponent implements OnInit {
   applyFilter() {
     let filteredTasks = this.taskService.getCurrentTasks();
 
-    console.log('Applying sort and filter...');
     if (this.filterControl.value) {
       filteredTasks = filteredTasks.filter(
         (task) =>
